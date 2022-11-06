@@ -19,6 +19,10 @@ mainButton.addEventListener('click', () => {
 });
 
 function startGame(){
+    majOrMin = document.getElementById('major_minor');
+    chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 
+    chord_type = document.getElementById('chord_type');
+    chord_type.innerHTML = chordType;
     getRandomNote();
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'Stop';
@@ -33,12 +37,15 @@ function stopGame(){
 }
 
 function getRandomNote(){
-
     let random_note = all_music_notes[Math.floor(Math.random()*all_music_notes.length)];
     note_display.innerHTML = random_note;
     
     return random_note;
 }
 
-
+function getMajOrMin(){
+    const chordType = ['major', 'minor']; 
+    
+    return chordType[Number(Math.random() >= 0.5)];
+}
 
