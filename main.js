@@ -27,9 +27,9 @@ function startGame(){
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'Stop';
 
-    interval = setInterval(getRandomNote, 5000);
+    interval = setInterval(getRandomNote, 4000);
     if(majOrMin.value == 'both'){
-        interval = setInterval(getMajOrMin, 5000);
+        interval = setInterval(getMajOrMin, 4000);
     }
 }
 
@@ -54,4 +54,20 @@ function getMajOrMin(){
 
     return minOrMaj;
 }
+
+function getRemainingTime(endTime) {
+    const currentTime = Date.parse(new Date());
+    const difference = endTime - currentTime;
+  
+    const total = Number.parseInt(difference / 1000, 10);
+    const minutes = Number.parseInt((total / 60) % 60, 10);
+    const seconds = Number.parseInt(total % 60, 10);
+  
+    return {
+      total,
+      minutes,
+      seconds,
+    };
+  }
+
 
