@@ -28,6 +28,9 @@ function startGame(){
     mainButton.textContent = 'Stop';
 
     interval = setInterval(getRandomNote, 5000);
+    if(majOrMin.value == 'both'){
+        interval = setInterval(getMajOrMin, 5000);
+    }
 }
 
 function stopGame(){
@@ -45,7 +48,10 @@ function getRandomNote(){
 
 function getMajOrMin(){
     const chordType = ['major', 'minor']; 
-    
-    return chordType[Number(Math.random() >= 0.5)];
+    minOrMaj = chordType[Number(Math.random() >= 0.5)]
+    chord_type = document.getElementById('chord_type');
+    chord_type.innerHTML = minOrMaj;
+
+    return minOrMaj;
 }
 
