@@ -19,6 +19,7 @@ mainButton.addEventListener('click', () => {
 });
 
 function startGame(){
+
     majOrMin = document.getElementById('major_minor');
     chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 
     chord_type = document.getElementById('chord_type');
@@ -31,6 +32,9 @@ function startGame(){
     if(majOrMin.value == 'both'){
         interval = setInterval(getMajOrMin, 4000);
     }
+
+    var circle = document.getElementById("circle");
+    circle.style["-webkit-animation-duration"] = 10 + "s";
 }
 
 function stopGame(){
@@ -55,5 +59,14 @@ function getMajOrMin(){
     return minOrMaj;
 }
 
+var countdownNumberEl = document.getElementById('countdown-number');
+var countdown = 4;
 
+countdownNumberEl.textContent = countdown;
+
+setInterval(function() {
+  countdown = --countdown <= 0 ? 4 : countdown;
+
+  countdownNumberEl.textContent = countdown;
+}, 1000);
 
