@@ -9,26 +9,25 @@
 
 </head>
 <body>
+    <label for="major_minor">Major Or Minor</label>
     <select name="major_minor" id="major_minor">
         <option value="major">Major</option>
         <option value="minor">Minor</option>
         <option value="both">Both</option>
     </select>
+    <label for="question_time"> Time</label>
+    <input type="number" id="question_time" name="question_time">
+    <button data-action="start" name="start" id="main-btn"> Start</button>
     <br><br>
     <div id="countdown">
         <div id="countdown-number"></div>
         <svg>
-            <circle id="circle" r="18" cx="20" cy="20">
-               
-            </circle>
+            <circle id="circle" r="18" cx="20" cy="20"></circle>
         </svg>
         <h3 id="music_note"></h3>
         <h3 id="chord_type" ></h3>
 
     </div>
-  
-    
-    <button data-action="start" name="start" id="main-btn"> Start</button>
 </body>
 
 <script src="./main.js"></script>
