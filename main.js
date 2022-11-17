@@ -33,8 +33,22 @@ function startGame(){
         interval = setInterval(getMajOrMin, 4000);
     }
 
-    var circle = document.getElementById("circle");
-    circle.style["-webkit-animation-duration"] = 10 + "s";
+    const question_time = document.getElementById('question_time');
+
+    let countdownNumberEl = document.getElementById('countdown-number');
+    let countdown = question_time.value;
+
+    countdownNumberEl.textContent = countdown;
+
+    setInterval(function() {
+    countdown = countdown >= 0 ? --countdown : 0;
+
+    countdownNumberEl.textContent = countdown;
+    }, 1000);
+
+
+    let circle = document.getElementById("circle");
+    circle.style["-webkit-animation-duration"] = question_time + "s";
 }
 
 function stopGame(){
@@ -59,14 +73,4 @@ function getMajOrMin(){
     return minOrMaj;
 }
 
-var countdownNumberEl = document.getElementById('countdown-number');
-var countdown = 4;
-
-countdownNumberEl.textContent = countdown;
-
-setInterval(function() {
-  countdown = --countdown <= 0 ? 4 : countdown;
-
-  countdownNumberEl.textContent = countdown;
-}, 1000);
 
