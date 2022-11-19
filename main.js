@@ -55,6 +55,8 @@ function stopGame(){
     clearInterval(interval);
     mainButton.dataset.action = 'start';
     mainButton.textContent = 'Start';
+    const circleAnimation = document.getElementById('circle');
+    circleAnimation.style.animationPlayState = 'paused';
 }
 
 function getRandomNote(){
