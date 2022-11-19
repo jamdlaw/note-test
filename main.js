@@ -20,7 +20,8 @@ mainButton.addEventListener('click', () => {
 
 function startGame(){
 
-    majOrMin = document.getElementById('major_minor');
+    const majOrMin = document.getElementById('major_minor');
+    const question_time = document.getElementById('question_time');
     chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 
     chord_type = document.getElementById('chord_type');
     chord_type.innerHTML = chordType;
@@ -28,12 +29,10 @@ function startGame(){
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'Stop';
 
-    interval = setInterval(getRandomNote, 4000);
+    interval = setInterval(getRandomNote, question_time.value * 1000);
     if(majOrMin.value == 'both'){
-        interval = setInterval(getMajOrMin, 4000);
+        interval = setInterval(getMajOrMin, question_time.value * 1000);
     }
-
-    const question_time = document.getElementById('question_time');
 
     let countdownNumberEl = document.getElementById('countdown-number');
     let countdown = question_time.value;
