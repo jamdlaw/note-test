@@ -49,6 +49,12 @@ function startGame(){
 
     countdownNumberEl.textContent = countdown;
     }, 1000);
+
+    
+    setInterval(function() {
+        countdown = question_time.value;
+        countdownNumberEl.textContent = question_time.value;
+        }, question_time.value * 1000);
 }
 
 function stopGame(){
