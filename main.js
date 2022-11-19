@@ -25,6 +25,8 @@ function startGame(){
     circleAnimation.style.animationPlayState = 'running';
     const majOrMin = document.getElementById('major_minor');
     const question_time = document.getElementById('question_time');
+    
+    circleAnimation.style["-webkit-animation-duration"] = question_time.value + "s";
     chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 
     chord_type = document.getElementById('chord_type');
     chord_type.innerHTML = chordType;
@@ -47,10 +49,6 @@ function startGame(){
 
     countdownNumberEl.textContent = countdown;
     }, 1000);
-
-
-    let circle = document.getElementById("circle");
-    circle.style["-webkit-animation-duration"] = question_time + "s";
 }
 
 function stopGame(){
