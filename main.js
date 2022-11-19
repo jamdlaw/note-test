@@ -20,6 +20,9 @@ mainButton.addEventListener('click', () => {
 
 function startGame(){
 
+    const circleAnimation = document.getElementById('circle');
+
+    circleAnimation.style.animationPlayState = 'running';
     const majOrMin = document.getElementById('major_minor');
     const question_time = document.getElementById('question_time');
     chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 

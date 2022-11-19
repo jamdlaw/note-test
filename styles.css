@@ -35,6 +35,7 @@ svg circle {
   stroke: rgb(0, 9, 6);
   fill: none;
   animation: countdown 4s linear infinite forwards;
+  animation-play-state: paused;
 }
 
 @keyframes countdown {
