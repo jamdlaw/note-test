@@ -19,26 +19,16 @@ mainButton.addEventListener('click', () => {
 });
 
 function startGame(){
-
     const circleAnimation = document.getElementById('circle');
-
-    circleAnimation.style.animationPlayState = 'running';
-    const majOrMin = document.getElementById('major_minor');
     const question_time = document.getElementById('question_time');
-    
     circleAnimation.style["-webkit-animation-duration"] = question_time.value + "s";
-    chordType = majOrMin.value ==  'both' ? getMajOrMin() :  majOrMin.value; 
-    chord_type = document.getElementById('chord_type');
-    chord_type.innerHTML = chordType;
+    circleAnimation.style.animationPlayState = 'running';
     getRandomNote();
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'Stop';
 
     interval = setInterval(getRandomNote, question_time.value * 1000);
-    if(majOrMin.value == 'both'){
-        interval = setInterval(getMajOrMin, question_time.value * 1000);
-    }
-
+    
     let countdownNumberEl = document.getElementById('countdown-number');
     let countdown = question_time.value;
 
