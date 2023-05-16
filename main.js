@@ -49,7 +49,7 @@ function stopGame(){
     circleAnimation.style.animationPlayState = 'paused';
     circleAnimation.style.strokeDashoffset = 0; // tyring to reset the circle but does not see to work
     circleAnimation.style["-webkit-animation-duration"] = question_time.value + "s";
-    
+    countdownNumberEl.textContent = question_time.value;
 }
 
 function getRandomNote(){
