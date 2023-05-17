@@ -2,6 +2,7 @@ const all_music_notes = ['A', 'A#', 'B', 'C', 'C#','D','D#','E', 'F','F#','G','G
 
 const note_display = document.getElementById('music_note');
 const mainButton = document.getElementById('main-btn');
+const circleAnimation = document.getElementById('circle');
 const question_time = document.getElementById('question_time');
 const countdownNumberEl = document.getElementById('countdown-number');
 let interval, userCountDown,countdown,userCountDown2;
@@ -20,6 +21,9 @@ mainButton.addEventListener('click', () => {
 });
 
 function startGame(){  
+    circleAnimation.style["-webkit-animation-duration"] = question_time.value + "s";
+    circleAnimation.style.animationPlayState = 'running';
+    
     getRandomNote();
     mainButton.dataset.action = 'stop';
     mainButton.textContent = 'Stop';
@@ -43,7 +47,9 @@ function stopGame(){
     clearInterval(userCountDown2);
     mainButton.dataset.action = 'start';
     mainButton.textContent = 'Start';
+    circleAnimation.style.animationPlayState = 'paused';
     countdownNumberEl.textContent = question_time.value;
+    circleAnimation.style.animation = "none";
     
 }
 
