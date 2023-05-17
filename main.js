@@ -1,61 +1,64 @@
-const all_music_notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
-
-const note_display = document.getElementById('music_note');
-const mainButton = document.getElementById('main-btn');
-const question_time = document.getElementById('question_time');
-const countdownNumberEl = document.getElementById('countdown-number');
-let interval, userCountDown, countdown, userCountDown2;
-
-mainButton.addEventListener('click', toggleGame);
-
-function toggleGame() {
-  const action = mainButton.dataset.action;
+class MusicGame {
+    constructor() {
+      this.allMusicNotes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+      this.noteDisplay = document.querySelector('#music_note');
+      this.mainButton = document.querySelector('#main-btn');
+      this.questionTime = document.querySelector('#question_time');
+      this.countdownNumberEl = document.querySelector('#countdown-number');
+      this.interval = null;
+      this.userCountDown = null;
+      this.userCountDown2 = null;
+      this.countdown = 0;
+      this.isPlaying = false;
+    }
   
-  if (action === 'start') {
-    startGame();
-  } else {
-    stopGame();
+    init() {
+      this.mainButton.addEventListener('click', () => this.toggleGame());
+    }
+  
+    toggleGame() {
+      if (this.isPlaying) {
+        this.stopGame();
+      } else {
+        this.startGame();
+      }
+    }
+  
+    startGame() {
+      this.getRandomNote();
+      this.mainButton.dataset.action = 'stop';
+      this.mainButton.textContent = 'Stop';
+      this.interval = setInterval(() => this.getRandomNote(), this.questionTime.value * 1000);
+      this.countdown = this.questionTime.value;
+      this.countdownNumberEl.textContent = this.countdown;
+      this.userCountDown = setInterval(() => {
+        this.countdown = this.countdown >= 0 ? --this.countdown : 0;
+        this.countdownNumberEl.textContent = this.countdown;
+      }, 1000);
+      this.userCountDown2 = setInterval(() => {
+        this.countdown = this.questionTime.value;
+        this.countdownNumberEl.textContent = this.questionTime.value;
+      }, this.questionTime.value * 1000);
+      this.isPlaying = true;
+    }
+  
+    stopGame() {
+      clearInterval(this.interval);
+      clearInterval(this.userCountDown);
+      clearInterval(this.userCountDown2);
+      this.mainButton.dataset.action = 'start';
+      this.mainButton.textContent = 'Start';
+      this.countdownNumberEl.textContent = this.questionTime.value;
+      this.isPlaying = false;
+    }
+  
+    getRandomNote() {
+      const randomNote = this.allMusicNotes[Math.floor(Math.random() * this.allMusicNotes.length)];
+      this.noteDisplay.textContent = randomNote;
+      return randomNote;
+    }
   }
-}
-
-function startGame() {
-  getRandomNote();
-  mainButton.dataset.action = 'stop';
-  mainButton.textContent = 'Stop';
-  interval = setInterval(getRandomNote, question_time.value * 1000);
-  countdown = question_time.value;
-  countdownNumberEl.textContent = countdown;
-  userCountDown = setInterval(function() {
-    countdown = countdown >= 0 ? --countdown : 0;
-    countdownNumberEl.textContent = countdown;
-  }, 1000);
-  userCountDown2 = setInterval(function() {
-    countdown = question_time.value;
-    countdownNumberEl.textContent = question_time.value;
-  }, question_time.value * 1000);
-}
-
-function stopGame() {
-  clearInterval(interval);
-  clearInterval(userCountDown);
-  clearInterval(userCountDown2);
-  mainButton.dataset.action = 'start';
-  mainButton.textContent = 'Start';
-  countdownNumberEl.textContent = question_time.value;
-}
-
-function getRandomNote() {
-  const randomNote = all_music_notes[Math.floor(Math.random() * all_music_notes.length)];
-  note_display.textContent = randomNote;
-
-  return randomNote;
-}
-
-function getMajOrMin() {
-  const chordType = ['major', 'minor'];
-  const minOrMaj = chordType[Number(Math.random() >= 0.5)];
-  const chord_type = document.getElementById('chord_type');
-  chord_type.textContent = minOrMaj;
-
-  return minOrMaj;
-}
+  
+  const musicGame = new MusicGame();
+  musicGame.init();
+  
