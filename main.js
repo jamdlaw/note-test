@@ -28,19 +28,32 @@ class MusicGame {
       this.getRandomNote();
       this.mainButton.dataset.action = 'stop';
       this.mainButton.textContent = 'Stop';
-      this.interval = setInterval(() => this.getRandomNote(), this.questionTime.value * 1000);
       this.countdown = this.questionTime.value;
       this.countdownNumberEl.textContent = this.countdown;
-      this.userCountDown = setInterval(() => {
+  
+      const timerFunction = () => {
         this.countdown = this.countdown >= 0 ? --this.countdown : 0;
         this.countdownNumberEl.textContent = this.countdown;
-      }, 1000);
-      this.userCountDown2 = setInterval(() => {
+  
+        if (this.countdown <= 0) {
+          clearInterval(timerId);
+          this.stopGame();
+        }
+      };
+  
+      const timerId = setInterval(timerFunction, 1000);
+      this.userCountDown = timerId;
+      this.userCountDown2 = timerId;
+  
+      this.interval = setInterval(() => {
+        this.getRandomNote();
         this.countdown = this.questionTime.value;
-        this.countdownNumberEl.textContent = this.questionTime.value;
+        this.countdownNumberEl.textContent = this.countdown;
       }, this.questionTime.value * 1000);
+  
       this.isPlaying = true;
     }
+  
   
     stopGame() {
       clearInterval(this.interval);
