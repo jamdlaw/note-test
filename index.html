@@ -34,7 +34,6 @@ function initialize()
 	get_user_media = get_user_media || navigator.mozGetUserMedia;
 	get_user_media.call(navigator, { "audio": true }, use_stream, function() {});
 
-	document.getElementById("play-note").addEventListener("click", toggle_playing_note);
 }
 
 function use_stream(stream)
@@ -114,6 +113,10 @@ function interpret_correlation_result(event)
 		let dominant_frequency = test_frequencies[maximum_index];
 		document.getElementById("note-name").textContent = dominant_frequency.name;
 		document.getElementById("frequency").textContent = dominant_frequency.frequency;
+		let music_note = document.querySelector('#music_note');
+		//console.log(dominant_frequency.name.split(' '));
+	
+		(dominant_frequency.name.split(' ') == music_note.innerHTML ? alert("good job") : '');
 	}
 }
 
