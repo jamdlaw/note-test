@@ -114,9 +114,10 @@ function interpret_correlation_result(event)
 		document.getElementById("note-name").textContent = dominant_frequency.name;
 		document.getElementById("frequency").textContent = dominant_frequency.frequency;
 		let music_note = document.querySelector('#music_note');
-		//console.log(dominant_frequency.name.split(' '));
+		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
+		//console.log(question);
 	
-		(dominant_frequency.name.split(' ') == music_note.innerHTML ? alert("good job") : '');
+		(question == music_note.innerHTML ? alert("good job") : '');
 	}
 }
 
