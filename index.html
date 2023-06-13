@@ -115,21 +115,10 @@ function interpret_correlation_result(event)
 		document.getElementById("frequency").textContent = dominant_frequency.frequency;
 		let music_note = document.querySelector('#music_note');
 		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
-		//console.log(question);
-	
+		
 		(question == music_note.innerHTML ? alert("good job") : '');
 	}
 }
-
-// Unnecessary addition of button to play an E note.
-let note_context = new AudioContext();
-let note_node = note_context.createOscillator();
-let gain_node = note_context.createGain();
-note_node.frequency = C2 * Math.pow(2, 4 / 12); // E, ~82.41 Hz.
-gain_node.gain.value = 0;
-note_node.connect(gain_node);
-gain_node.connect(note_context.destination);
-note_node.start();
 
 let playing = false;
 function toggle_playing_note()
