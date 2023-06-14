@@ -114,9 +114,14 @@ function interpret_correlation_result(event)
 		document.getElementById("note-name").textContent = dominant_frequency.name;
 		document.getElementById("frequency").textContent = dominant_frequency.frequency;
 		let music_note = document.querySelector('#music_note');
-		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
 		
-		(question == music_note.innerHTML ? alert("good job") : '');
+		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
+		//why does console loging the following make a split error go away?
+		//to reproduce problem uncomment the following console.log
+		console.log(typeof(question[0]));
+		
+		
+		(question[0] == music_note.innerHTML ? alert("good job") : '');
 	}
 }
 
