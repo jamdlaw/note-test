@@ -9,6 +9,7 @@ class MusicGame {
       this.userCountDown = null;
       this.userCountDown2 = null;
       this.countdown = 0;
+      this.score = 0;
       this.isPlaying = false;
     }
   
@@ -69,6 +70,11 @@ class MusicGame {
       const randomNote = this.allMusicNotes[Math.floor(Math.random() * this.allMusicNotes.length)];
       this.noteDisplay.textContent = randomNote;
       return randomNote;
+    }
+
+    scorePoint(){
+      this.score++;
+      return this.score;
     }
   }
   
