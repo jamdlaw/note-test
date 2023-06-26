@@ -108,6 +108,7 @@ function interpret_correlation_result(event)
 	let average = magnitudes.reduce(function(a, b) { return a + b; }, 0) / magnitudes.length;
 	let confidence = maximum_magnitude / average;
 	let confidence_threshold = 10; // empirical, arbitrary.
+	
 	if (confidence > confidence_threshold)
 	{
 		let dominant_frequency = test_frequencies[maximum_index];
@@ -120,7 +121,8 @@ function interpret_correlation_result(event)
 		//to repeat the problem comment out the following typeof() code
 		typeof(question[0]);
 		
-		(question[0] == music_note.innerHTML ? alert("good job") : '');
+		(question[0] == music_note.innerHTML ? scorePoint() : '');
+
 	}
 }
 
@@ -160,4 +162,10 @@ function toggle_playing_note()
 </body>
 
 <script src="./main.js"></script>
+<script>
+	function scorePoint(){
+		musicGame.scorePoint();
+		console.log(musicGame.score);
+	}
+</script>
 </html>
