@@ -5,3 +5,4 @@ log:
 starting on this project tomorrow 5/31
 06/07 going to add the function that can tell when the requested note
 and the note being played are the same.
+06/29 game now compares and add to a score when the user gets the answer right, next thing to do is reset the level when a user gets the answer right. 
