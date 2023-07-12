@@ -74,6 +74,7 @@ class MusicGame {
 
     scorePoint(){
       this.score++;
+      this.startGame();
       return this.score;
     }
   }
