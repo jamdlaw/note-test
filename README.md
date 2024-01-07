@@ -7,3 +7,4 @@ starting on this project tomorrow 5/31
 and the note being played are the same.
 06/29 game now compares and add to a score when the user gets the answer right, next thing to do is reset the level when a user gets the answer right. 
 07/07 tbh i have not done anything this week, been sic and also just mentally dead. I will get started again soon. 
+01/06 back at it again
