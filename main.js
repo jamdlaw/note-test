@@ -77,6 +77,12 @@ class MusicGame {
       this.startGame();
       return this.score;
     }
+
+     // Function to update the button's state
+    updateButtonState(action, text) {
+      this.mainButton.dataset.action = action;
+      this.mainButton.textContent = text;
+    }
   }
   
   const musicGame = new MusicGame();
