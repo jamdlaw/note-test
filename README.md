@@ -16,5 +16,9 @@ this aplication is just JS, CSS , and HTML.
 
 download files and start your choice of webserver. I like "Go Live" pluging for VS Code.
 
+## Built With
 
-
+* [JavaScript]
+* [HTML]
+* [CSS]
+* possibly one day we will see some WASM on this project :sunglasses:
