@@ -22,3 +22,7 @@ download files and start your choice of webserver. I like "Go Live" pluging for 
 * [HTML]
 * [CSS]
 * possibly one day we will see some WASM on this project :sunglasses:
+
+## Contributing
+
+I see this as a open project so if people want to contribute, lets code together. I would love to see the tunner part in WASM one day. 
