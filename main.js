@@ -27,8 +27,10 @@ class MusicGame {
   
     startGame() {
       this.getRandomNote();
-      this.mainButton.dataset.action = 'stop';
-      this.mainButton.textContent = 'Stop';
+      //this.mainButton.dataset.action = 'stop';
+      //this.mainButton.textContent = 'Stop';
+      // Update button state to "Stop"
+      this.updateButtonState('stop', 'Stop');
       this.countdown = this.questionTime.value;
       this.countdownNumberEl.textContent = this.countdown;
   
