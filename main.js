@@ -60,8 +60,10 @@ class MusicGame {
       clearInterval(this.interval);
       clearInterval(this.userCountDown);
       clearInterval(this.userCountDown2);
-      this.mainButton.dataset.action = 'start';
-      this.mainButton.textContent = 'Start';
+      //this.mainButton.dataset.action = 'start';
+      //this.mainButton.textContent = 'Start';
+      // Update button state to "Start"
+      this.updateButtonState('start', 'Start');
       this.countdownNumberEl.textContent = this.questionTime.value;
       this.isPlaying = false;
     }
