@@ -9,5 +9,7 @@ Clone project to your system. Start a webserver at the root. I am currently usin
 
 ### Prerequisites
 
-What things you need to install the software and how to install them:
+Know how to build you own webserver I guess???
+this aplication is just JS, CSS , and HTML.
+
 
