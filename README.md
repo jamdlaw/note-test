@@ -1,6 +1,7 @@
-# Project Title
+# Music Note Test or Music Note Game
 
-One paragraph of project description goes here. Include a brief explanation of what the project does and its target audience or use case.
+A game take picks a random music note. If the
+player plays the correct note the get a point. This is a demo app that is also used to showcase different technolies, curret version is built in JavaScript.
 
 ## Getting Started
 
