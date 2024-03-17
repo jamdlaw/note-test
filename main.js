@@ -27,9 +27,6 @@ class MusicGame {
   
     startGame() {
       this.getRandomNote();
-      //this.mainButton.dataset.action = 'stop';
-      //this.mainButton.textContent = 'Stop';
-      // Update button state to "Stop"
       this.updateButtonState('stop', 'Stop');
       this.countdown = this.questionTime.value;
       this.countdownNumberEl.textContent = this.countdown;
@@ -62,9 +59,6 @@ class MusicGame {
       clearInterval(this.interval);
       clearInterval(this.userCountDown);
       clearInterval(this.userCountDown2);
-      //this.mainButton.dataset.action = 'start';
-      //this.mainButton.textContent = 'Start';
-      // Update button state to "Start"
       this.updateButtonState('start', 'Start');
       this.countdownNumberEl.textContent = this.questionTime.value;
       this.isPlaying = false;
