@@ -1,11 +1,12 @@
-# note-test
-purpose: self coding project and music game. I want to make a game that would help me learn the notes of either guitar, piano, sining or really any intremnt. 
-the way I see this game working the player would chose a number of secounds to play a random note. the program asks for a note to be played and the player has the time limit set to play the correct note. This program should have a tuner so it can listen and decode the correct pitches. 
-log:
-starting on this project tomorrow 5/31
-06/07 going to add the function that can tell when the requested note
-and the note being played are the same.
-06/29 game now compares and add to a score when the user gets the answer right, next thing to do is reset the level when a user gets the answer right. 
-07/07 tbh i have not done anything this week, been sic and also just mentally dead. I will get started again soon. 
-01/06 back at it again
-02/27 might be working on this project again soon 
+# Project Title
+
+One paragraph of project description goes here. Include a brief explanation of what the project does and its target audience or use case.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+What things you need to install the software and how to install them:
+
