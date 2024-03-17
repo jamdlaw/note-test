@@ -12,4 +12,9 @@ Clone project to your system. Start a webserver at the root. I am currently usin
 Know how to build you own webserver I guess???
 this aplication is just JS, CSS , and HTML.
 
+### Installing
+
+download files and start your choice of webserver. I like "Go Live" pluging for VS Code.
+
+
 
