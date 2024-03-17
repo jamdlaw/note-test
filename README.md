@@ -5,7 +5,7 @@ player plays the correct note the get a point. This is a demo app that is also u
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone project to your system. Start a webserver at the root. I am currently using a plugin called "Go Live" in VS Code.
 
 ### Prerequisites
 
