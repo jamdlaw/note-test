@@ -77,6 +77,8 @@ class MusicGame {
 
     //change button text
     updateButtonState(action) {
+      //TODO: udpate function to only use action 
+      // perma
       this.mainButton.dataset.action = action;
       this.mainButton.textContent = text;
     }
