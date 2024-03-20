@@ -76,7 +76,7 @@ class MusicGame {
     }
 
     //change button text
-    updateButtonState(action, text) {
+    updateButtonState(action) {
       this.mainButton.dataset.action = action;
       this.mainButton.textContent = text;
     }
