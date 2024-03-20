@@ -53,8 +53,7 @@ class MusicGame {
   
       this.isPlaying = true;
     }
-  
-  
+   
     stopGame() {
       clearInterval(this.interval);
       clearInterval(this.userCountDown);
@@ -76,7 +75,7 @@ class MusicGame {
       return this.score;
     }
 
-     // Function to update the button's state
+    //change button text
     updateButtonState(action, text) {
       this.mainButton.dataset.action = action;
       this.mainButton.textContent = text;
