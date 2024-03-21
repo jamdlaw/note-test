@@ -7,7 +7,6 @@ class MusicGame {
       this.countdownNumberEl = document.querySelector('#countdown-number');
       this.interval = null;
       this.userCountDown = null;
-      this.userCountDown2 = null;
       this.countdown = 0;
       this.score = 0;
       this.isPlaying = false;
