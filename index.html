@@ -117,9 +117,6 @@ function interpret_correlation_result(event)
 		let music_note = document.querySelector('#music_note');
 		
 		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
-		//why does a random bit of code seem to solve the slit error showing in the dev console?
-		//to repeat the problem comment out the following typeof() code
-		typeof(question[0]);
 		
 		(question[0] == music_note.innerHTML ? scorePoint() : '');
 
