@@ -42,7 +42,6 @@ class MusicGame {
   
       const timerId = setInterval(timerFunction, 1000);
       this.userCountDown = timerId;
-      this.userCountDown2 = timerId;
   
       this.interval = setInterval(() => {
         this.getRandomNote();
