@@ -33,17 +33,7 @@ class MusicGame {
       this.countdown = this.questionTime.value;
       this.countdownNumberEl.textContent = this.countdown;
   
-      const timerFunction = () => {
-        this.countdown = this.countdown >= 0 ? --this.countdown : 0;
-        this.countdownNumberEl.textContent = this.countdown;
-  
-        if (this.countdown <= 0) {
-          clearInterval(timerId);
-          this.stopGame();
-        }
-      };
-  
-      const timerId = setInterval(timerFunction, 1000);
+      const timerId = setInterval(this.timerFunction, 1000);
       this.userCountDown = timerId;
   
       this.interval = setInterval(() => {
@@ -80,6 +70,17 @@ class MusicGame {
       this.mainButton.dataset.action = action;
       this.mainButton.textContent = action;
     }
+  
+    timerFunction = () => {
+      this.countdown = this.countdown >= 0 ? --this.countdown : 0;
+      this.countdownNumberEl.textContent = this.countdown;
+
+      if (this.countdown <= 0) {
+        clearInterval(timerId);
+        this.stopGame();
+      }
+    };
+
   }
   
   const musicGame = new MusicGame();
