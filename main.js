@@ -57,7 +57,6 @@ class MusicGame {
     stopGame() {
       clearInterval(this.interval);
       clearInterval(this.userCountDown);
-      clearInterval(this.userCountDown2);
       this.updateButtonState('start');
       this.countdownNumberEl.textContent = this.questionTime.value;
       this.isPlaying = false;
