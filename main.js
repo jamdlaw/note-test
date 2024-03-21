@@ -1,3 +1,6 @@
+//Class is responsible for the game play.
+//correlation_work.js and the index have
+// code for the tunner
 class MusicGame {
     constructor() {
       this.allMusicNotes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
