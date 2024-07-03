@@ -1,7 +1,7 @@
 # Music Note Test or Music Note Game
 
 A game take picks a random music note. If the
-player plays the correct note the get a point. This is a demo app that is also used to showcase different technolies, curret version is built in JavaScript.
+player plays the correct note the get a point. This is a demo app that is also used to showcase different technolies, curret version is built in JavaScript. Credit for the hard parts of this app goes to Jonathan Bergknoff see his blog here https://jonathan.bergknoff.com/journal/making-a-guitar-tuner-html5
 
 ## Getting Started
 
