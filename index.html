@@ -116,8 +116,15 @@ function interpret_correlation_result(event)
 		document.getElementById("frequency").textContent = dominant_frequency.frequency;
 		let music_note = document.querySelector('#music_note');
 		
-		question = dominant_frequency.name.includes('#') ? dominant_frequency.name.split('# ') : dominant_frequency.name.split(' ')
 		
+		//parse note played info into a array
+		question = dominant_frequency.name.split(" ")
+		
+		//keeping debug code in for now seems to keep things working for some reason
+		console.log(question[0])
+		console.log(music_note.innerHTML)
+ 
+		//compare note played C,D# to note asked for in markup
 		(question[0] == music_note.innerHTML ? scorePoint() : '');
 
 	}
