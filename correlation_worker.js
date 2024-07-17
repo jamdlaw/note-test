@@ -7,28 +7,36 @@ self.onmessage = function(event)
 	self.postMessage({ "timeseries": timeseries, "frequency_amplitudes": amplitudes });
 };
 
+
 function computeCorrelations(timeseries, test_frequencies, sample_rate)
 {
-	// 2pi * frequency gives the appropriate period to sine.
-	// timeseries index / sample_rate gives the appropriate time coordinate.
-	let scale_factor = 2 * Math.PI / sample_rate;
-	let amplitudes = test_frequencies.map
-	(
-		function(f)
-		{
-			let frequency = f.frequency;
+    // 2pi / sample_rate converts frequency to radians per sample.
+    let scale_factor = 2 * Math.PI / sample_rate;
 
-			// Represent a complex number as a length-2 array [ real, imaginary ].
-			let accumulator = [ 0, 0 ];
-			for (let t = 0; t < timeseries.length; t++)
-			{
-				accumulator[0] += timeseries[t] * Math.cos(scale_factor * frequency * t);
-				accumulator[1] += timeseries[t] * Math.sin(scale_factor * frequency * t);
-			}
+    // Map each test frequency to its computed amplitude.
+    let amplitudes = test_frequencies.map(
+        function(f)
+        {
+            let frequency = f.frequency;
 
-			return accumulator;
-		}
-	);
+            // Initialize the accumulator for the real and imaginary components.
+            let accumulator = [ 0, 0 ];
 
-	return amplitudes;
+            // Loop through each time point in the timeseries.
+            for (let t = 0; t < timeseries.length; t++)
+            {
+                // Add the contribution of the current sample to the real part.
+                accumulator[0] += timeseries[t] * Math.cos(scale_factor * frequency * t);
+
+                // Add the contribution of the current sample to the imaginary part.
+                accumulator[1] += timeseries[t] * Math.sin(scale_factor * frequency * t);
+            }
+
+            // Return the complex amplitude for this frequency.
+            return accumulator;
+        }
+    );
+
+    // Return the array of amplitudes for each test frequency.
+    return amplitudes;
 }
